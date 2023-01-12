@@ -1,6 +1,6 @@
 .cabecalho__menu-hamburguer{
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 40px;
     background-image: url("../img/Menu.svg");
     background-repeat: no-repeat;
     background-position: center;
@@ -20,6 +20,13 @@
     align-items: center;
 }
 
+.container__titulo{
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
 .container__imagem{
     padding: 1em;
 }
@@ -30,6 +37,9 @@
     top: 100%;
     width: 60vw;
     
+}
+.container__texto{
+    display: none;
 }
 
 .container__botao{
@@ -56,5 +66,92 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburguer{
+    background-image: url(../img/menu_aberto.svg);
+}
+
+.container__botao:checked ~ .container__rotulo{
+    background: var(--azul-degrade);
+}
+
+
+@media screen and (min-width:1024px) {
+    .container__titulo, .container__titulo--negrito{
+        font-family: var(--fonte-secundario);
+
+    }
+    .container__titulo{
+        font-size: 30px;
+        font-weight: 400;
+        display: block;
+    }
+    .container__titulo--negrito{
+        font-weight: 700;
+    }
+    .opcoes{
+        display: flex;
+        align-items: center;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: var(--preto);
+          
+    }
+    .opcoes__itens{
+        padding: 2em 1em;
+        text-transform: uppercase; 
+    }
+
     
+    
+    .container__imagem--transparente, .cabecalho__menu-hamburguer{
+        display: none;
+    }
+
+    .opcoes__botao{
+        display: none;
+    }
+    .opcoes__botao:checked ~ .lista-menu{
+        display: block;
+    }
+    .lista-menu{
+        width: auto;
+    }
+   
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__itens{
+        background: var(--azul-degrade);
+        -webkit-text-fill-color: var(--branco);
+        
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+    }
+}
+
+@media screen and (min-width:1728px){
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+        font-size: 20px;
+    }
+
+    .container{
+        margin: 0 3em;
+    }
+
+    .opcoes{
+        margin-right: auto;
+    }
+    .container__texto{
+        display: block;
+    }
 }
